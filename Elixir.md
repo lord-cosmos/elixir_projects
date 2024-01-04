@@ -24,7 +24,7 @@ modules -- done dec 28 2023 8:03pm
 mix -- done dec 29 2023 (no time)
 sigils -- done Jan 1 8:47pm
 documentation -- done Jan 2 8:59pm
-comprehensions
+comprehensions -- done Jan 3 9:16pm
 strings
 date and time
 iex helpers
@@ -44,3 +44,5 @@ It is possible to nest modules in Elixir, allowing you to further namespace your
 ---
 
 Submited a PR to ElixirSchool -- Jan 2 8:59pm
+
+---
