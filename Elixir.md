@@ -46,3 +46,20 @@ It is possible to nest modules in Elixir, allowing you to further namespace your
 Submited a PR to ElixirSchool -- Jan 2 8:59pm
 
 ---
+
+In Elixir, <<c>> is a binary literal syntax used to represent a single byte in a binary. This syntax is commonly used when working with binary data, especially when you need to specify a single byte explicitly.
+
+The <<c>> syntax is an Elixir shortcut to create a binary containing a single byte represented by the value of c. Here, c typically stands for an integer value representing the byte in its ASCII or Unicode code.
+
+For example:
+
+<<65>> represents a binary containing the byte with the decimal value 65, which corresponds to the ASCII character 'A'.
+<<72, 101, 108, 108, 111>> represents a binary containing the ASCII codes for the characters 'H', 'e', 'l', 'l', 'o'.
+
+```Elixir
+> for c <- [72, 101, 108, 108, 111], into: "", do: <<c>>
+"Hello"
+
+> for c <- [81, 72, 78,89], into: "", do: <<c>>
+"QHNY"
+```
