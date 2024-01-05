@@ -25,7 +25,7 @@ mix -- done dec 29 2023 (no time)
 sigils -- done Jan 1 8:47pm
 documentation -- done Jan 2 8:59pm
 comprehensions -- done Jan 3 9:16pm
-strings
+strings -- done Jan 4 10:09pm
 date and time
 iex helpers
 
@@ -62,4 +62,22 @@ For example:
 
 > for c <- [81, 72, 78,89], into: "", do: <<c>>
 "QHNY"
+``` 
+Usage of String.graphemes
+
+```Elixir
+defmodule Anagrams do
+ def anagrams?(a,b) when is_binary(a) and is_binary(b) do:
+  sort_order(a) == sort_order(b)
+ end
+ def sort_order(string) do
+   string
+   |> String.downcase()
+   |> String.graphemes()
+   |> Enum.sort()
+ end
+end
 ```
+
+
+
