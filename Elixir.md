@@ -26,7 +26,7 @@ sigils -- done Jan 1 8:47pm
 documentation -- done Jan 2 8:59pm
 comprehensions -- done Jan 3 9:16pm
 strings -- done Jan 4 10:09pm
-date and time
+date and time -- done Jan 5 8:30pm
 iex helpers
 
 ---
@@ -62,7 +62,8 @@ For example:
 
 > for c <- [81, 72, 78,89], into: "", do: <<c>>
 "QHNY"
-``` 
+```
+
 Usage of String.graphemes
 
 ```Elixir
@@ -78,6 +79,3 @@ defmodule Anagrams do
  end
 end
 ```
-
-
-
