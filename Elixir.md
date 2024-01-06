@@ -79,3 +79,14 @@ defmodule Anagrams do
  end
 end
 ```
+
+Example of Tzdata package leverage:
+
+```Elixir
+paris_datetime = DateTime.from_naive!(~N[2019-01-01 12:00:00], "Europe/Paris")
+#DateTime<2019-01-01 12:00:00+01:00 CET Europe/Paris>
+{:ok, ny_datetime} = DateTime.shift_zone(paris_datetime, "America/New_York")
+{:ok, #DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>}
+ny_datetime
+#DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>
+```
