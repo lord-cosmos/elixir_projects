@@ -27,7 +27,7 @@ documentation -- done Jan 2 8:59pm
 comprehensions -- done Jan 3 9:16pm
 strings -- done Jan 4 10:09pm
 date and time -- done Jan 5 8:30pm
-iex helpers
+iex helpers -- done Jan 6 9:47pm
 
 ---
 
