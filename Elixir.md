@@ -13,21 +13,23 @@ and or not - first arrgument must be boolean
 <> string concatenation
 #{name} string interpolation
 
-Basics -- done 14 dec 2023 2:57pm
-Collections -- done 20 dec 2023 1:13pm
-Enum -- done 22 dec 2023 9:53pm
-Pattern Matching -- done dec 23 2023 9:40pm
-ControlStructures -- done dec 24 2023 9:35pm
-functions -- done dec 25 2023 10:37pm
-pipe operator -- done dec 27 2023 8:42pm
-modules -- done dec 28 2023 8:03pm
-mix -- done dec 29 2023 (no time)
-sigils -- done Jan 1 8:47pm
-documentation -- done Jan 2 8:59pm
-comprehensions -- done Jan 3 9:16pm
-strings -- done Jan 4 10:09pm
-date and time -- done Jan 5 8:30pm
-iex helpers -- done Jan 6 9:47pm
+Basics ELIXIR :
+
+1. Basics -- done 14 dec 2023 2:57pm
+2. Collections -- done 20 dec 2023 1:13pm
+3. Enum -- done 22 dec 2023 9:53pm
+4. Pattern Matching -- done dec 23 2023 9:40pm
+5. ControlStructures -- done dec 24 2023 9:35pm
+6. functions -- done dec 25 2023 10:37pm
+7. pipe operator -- done dec 27 2023 8:42pm
+8. modules -- done dec 28 2023 8:03pm
+9. mix -- done dec 29 2023 (no time)
+10. sigils -- done Jan 1 8:47pm
+11. documentation -- done Jan 2 8:59pm
+12. comprehensions -- done Jan 3 9:16pm
+13. strings -- done Jan 4 10:09pm
+14. date and time -- done Jan 5 8:30pm
+15. iex helpers -- done Jan 6 9:47pm
 
 ---
 
@@ -90,3 +92,42 @@ paris_datetime = DateTime.from_naive!(~N[2019-01-01 12:00:00], "Europe/Paris")
 ny_datetime
 #DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>
 ```
+
+INTERMEDIATE ELIXIR :
+
+1. Custom Mix Tasks -- done Jan 7 2024 10:53am
+
+
+
+
+
+
+
+Notes :
+
+1. Mix does not automatically start our application or any of its dependencies which is fine for many Mix task use-cases but what if we need to use Ecto and interact with a database? In that case we need to make sure the app behind Ecto.Repo has started. There are 2 ways for us to handle this: explicitly starting an app or we can start our application which in turn will start the others.
+
+To create our custom Mix task. 
+
+Create a new directory and file projectName/lib/mix/tasks/hello.ex. 
+
+```Elixir
+
+defmodule Mix.Tasks.Hello do
+  @moduledoc "The hello mix task: `mix help hello`"
+  use Mix.Task
+
+  @shortdoc "Simply calls the Hello.say/0 function."
+  def run(_) do
+    # This will start our application
+    Mix.Task.run("app.start")
+
+    Hello.say()
+  end
+end
+```
+
+Note: Our code must be compiled before new tasks will appear in the mix help output. We can do this either by running mix compile directly or by running our task as we did with mix hello, which will trigger the compilation for us.
+
+It’s important to note that task names are derived from the module name, so Mix.Tasks.MyHelper.Utility will become my_helper.utility.
+
