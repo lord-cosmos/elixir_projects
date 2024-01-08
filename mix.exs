@@ -27,7 +27,8 @@ defmodule Example.MixProject do
     [
       {:dep_from_hexpm, "~> 0.3.0"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
-      {:tzdata, "~> 1.1"}
+      {:tzdata, "~> 1.1"},
+      {:png, github: "yuce/png"},
 
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
