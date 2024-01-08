@@ -133,3 +133,10 @@ def deps do
   [{:png, github: "yuce/png"}]
 end
 ```
+
+Leveraging Erlang from within our Elixir applications is easy and effectively doubles the number of libraries available to us.
+Difference btw Elixir and Erlang :
+1. atoms `:atom` , `atom.`
+2. String UTF-8 encoded binaries,  char lists
+3. variables can start with lowercase/upper case, Only upper case is allowed
+4. Rebinging Allowed, Not allowed.
