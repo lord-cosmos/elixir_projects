@@ -97,19 +97,13 @@ INTERMEDIATE ELIXIR :
 
 1. Custom Mix Tasks -- done Jan 7 2024 10:53am
 
-
-
-
-
-
-
 Notes :
 
 1. Mix does not automatically start our application or any of its dependencies which is fine for many Mix task use-cases but what if we need to use Ecto and interact with a database? In that case we need to make sure the app behind Ecto.Repo has started. There are 2 ways for us to handle this: explicitly starting an app or we can start our application which in turn will start the others.
 
-To create our custom Mix task. 
+To create our custom Mix task.
 
-Create a new directory and file projectName/lib/mix/tasks/hello.ex. 
+Create a new directory and file projectName/lib/mix/tasks/hello.ex.
 
 ```Elixir
 
@@ -131,3 +125,11 @@ Note: Our code must be compiled before new tasks will appear in the mix help out
 
 It’s important to note that task names are derived from the module name, so Mix.Tasks.MyHelper.Utility will become my_helper.utility.
 
+Similar to Mix and managing our dependencies, including Erlang libraries works the same way.
+In the event the Erlang library has not been pushed to Hex you can refer to the git repository instead:
+
+```Elixir
+def deps do
+  [{:png, github: "yuce/png"}]
+end
+```
