@@ -97,6 +97,9 @@ INTERMEDIATE ELIXIR :
 
 1. Custom Mix Tasks -- done Jan 7 2024 10:53am
 2. Erlang Interoperability -- done Jan 8 2024 no time
+3. Error Handling -- done Jan 9 11:50am
+4. Executables 
+5. Concurrency
 
 Notes :
 
@@ -149,3 +152,24 @@ In Elixir, the ! (exclamation mark) at the end of a function name conventionally
 
 the ? (question mark) at the end of a function name conventionally denotes that the function might deal with single-character inputs or perform some specific operation related to single characters.
 
+
+
+Create New Error module :
+
+```Elixir 
+
+defmodule ExampleError do
+  defexception message: "an example error has occurred"
+end
+
+try do 
+  raise ExampleError
+rescue
+  e in ExampleError -> e
+end
+
+%ExampleError{message: "an example error has occurred"}
+
+```
+
+Advanced Elixir :
