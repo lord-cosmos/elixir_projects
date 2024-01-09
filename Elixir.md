@@ -96,6 +96,7 @@ ny_datetime
 INTERMEDIATE ELIXIR :
 
 1. Custom Mix Tasks -- done Jan 7 2024 10:53am
+2. Erlang Interoperability -- done Jan 8 2024 no time
 
 Notes :
 
@@ -147,3 +148,4 @@ Difference btw Elixir and Erlang :
 In Elixir, the ! (exclamation mark) at the end of a function name conventionally denotes that the function is a "bang" or "dangerous" operation. It usually indicates that the function performs an operation that can _raise errors or have side effects_.
 
 the ? (question mark) at the end of a function name conventionally denotes that the function might deal with single-character inputs or perform some specific operation related to single characters.
+
