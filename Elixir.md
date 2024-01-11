@@ -98,7 +98,7 @@ INTERMEDIATE ELIXIR :
 1. Custom Mix Tasks -- done Jan 7 2024 10:53am
 2. Erlang Interoperability -- done Jan 8 2024 no time
 3. Error Handling -- done Jan 9 11:50am
-4. Executables 
+4. Executables
 5. Concurrency
 
 Notes :
@@ -152,17 +152,15 @@ In Elixir, the ! (exclamation mark) at the end of a function name conventionally
 
 the ? (question mark) at the end of a function name conventionally denotes that the function might deal with single-character inputs or perform some specific operation related to single characters.
 
-
-
 Create New Error module :
 
-```Elixir 
+```Elixir
 
 defmodule ExampleError do
   defexception message: "an example error has occurred"
 end
 
-try do 
+try do
   raise ExampleError
 rescue
   e in ExampleError -> e
@@ -172,4 +170,10 @@ end
 
 ```
 
+To build executables in Elixir, we will be using escript. Escript produces an executable that can be run on any system with Erlang installed.
+
+In Elixir, the `\\` operator within function parameters is used to set default values.
+I love Erlang.
 Advanced Elixir :
+
+
