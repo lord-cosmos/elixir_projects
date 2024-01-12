@@ -11,7 +11,7 @@ defmodule Example.MixProject do
       escript: escript(),
     ]
   end
-
+ 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
