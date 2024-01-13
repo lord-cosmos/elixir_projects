@@ -168,12 +168,24 @@ end
 
 %ExampleError{message: "an example error has occurred"}
 
+
+defmodule ExampleError2 do
+  defexception message: "an example error 2 has occured"
+end
+
+try do 
+  raise ExampleError2
+rescue
+  e in ExampleError -> e
+  e in ExampleError2 -> e
+end
+
+
 ```
 
 To build executables in Elixir, we will be using escript. Escript produces an executable that can be run on any system with Erlang installed.
 
 In Elixir, the `\\` operator within function parameters is used to set default values.
 I love Erlang.
+
 Advanced Elixir :
-
-
