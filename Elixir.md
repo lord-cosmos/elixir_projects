@@ -173,7 +173,7 @@ defmodule ExampleError2 do
   defexception message: "an example error 2 has occured"
 end
 
-try do 
+try do
   raise ExampleError2
 rescue
   e in ExampleError -> e
@@ -187,5 +187,8 @@ To build executables in Elixir, we will be using escript. Escript produces an ex
 
 In Elixir, the `\\` operator within function parameters is used to set default values.
 I love Erlang.
+
+Concurrency:
+Processes in the Erlang VM are lightweight and run across all CPUs. While they may seem like native threads, they’re simpler and it’s not uncommon to have thousands of concurrent processes in an Elixir application.
 
 Advanced Elixir :
