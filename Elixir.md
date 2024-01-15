@@ -191,4 +191,8 @@ I love Erlang.
 Concurrency:
 Processes in the Erlang VM are lightweight and run across all CPUs. While they may seem like native threads, they’re simpler and it’s not uncommon to have thousands of concurrent processes in an Elixir application.
 
+Processes in the Erlang VM are lightweight and run across all CPUs. While they may seem like native threads, they’re simpler and it’s not uncommon to have thousands of concurrent processes in an Elixir application.
+
+The easiest way to create a new process is spawn, which takes either an anonymous or named function. When we create a new process it returns a Process Identifier, or PID, to uniquely identify it within our application.
+
 Advanced Elixir :
