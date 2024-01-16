@@ -196,3 +196,4 @@ Processes in the Erlang VM are lightweight and run across all CPUs. While they m
 The easiest way to create a new process is spawn, which takes either an anonymous or named function. When we create a new process it returns a Process Identifier, or PID, to uniquely identify it within our application.
 
 Advanced Elixir :
+
