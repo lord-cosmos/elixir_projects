@@ -98,8 +98,8 @@ INTERMEDIATE ELIXIR :
 1. Custom Mix Tasks -- done Jan 7 2024 10:53am
 2. Erlang Interoperability -- done Jan 8 2024 no time
 3. Error Handling -- done Jan 9 11:50am
-4. Executables
-5. Concurrency
+4. Executables -- done no date.
+5. Concurrency -- 
 
 Notes :
 
@@ -195,5 +195,7 @@ Processes in the Erlang VM are lightweight and run across all CPUs. While they m
 
 The easiest way to create a new process is spawn, which takes either an anonymous or named function. When we create a new process it returns a Process Identifier, or PID, to uniquely identify it within our application.
 
-Advanced Elixir :
+In process.ex,
+`listen/0` function is recursive, this allows our process to handle multiple messages. Without recursion our process would exit after handling the first message.
 
+Advanced Elixir :
