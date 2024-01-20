@@ -205,5 +205,5 @@ Started
 Concurrent Processing In Elixir Textbook
 
 Chapter 1 : Easy concurrency with the task module
-Dates : Progress(pages & concept)  
-Jan 19,2024 1-
+Progress(pages & concept) : Dates
+1-7 (Task.start) Jan 19,2024
