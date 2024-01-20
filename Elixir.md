@@ -99,7 +99,7 @@ INTERMEDIATE ELIXIR :
 2. Erlang Interoperability -- done Jan 8 2024 no time
 3. Error Handling -- done Jan 9 11:50am
 4. Executables -- done no date.
-5. Concurrency -- 
+5. Concurrency --
 
 Notes :
 
@@ -199,3 +199,11 @@ In process.ex,
 `listen/0` function is recursive, this allows our process to handle multiple messages. Without recursion our process would exit after handling the first message.
 
 Advanced Elixir :
+
+Started
+
+Concurrent Processing In Elixir Textbook
+
+Chapter 1 : Easy concurrency with the task module
+Dates : Progress(pages & concept)  
+Jan 19,2024 1-
