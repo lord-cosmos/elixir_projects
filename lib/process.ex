@@ -1,4 +1,4 @@
-defmodule Example do
+defmodule Example2 do
   def add(a,b) do
     IO.puts a+b
   end
@@ -14,5 +14,4 @@ defmodule Example do
 end
 
 
-spawn Example, :add, [2,3]
-
+spawn Example2, :add, [2,3]
