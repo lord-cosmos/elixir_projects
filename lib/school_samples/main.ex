@@ -1,5 +1,5 @@
 defmodule Example.CLI do
-  alias ElixirSense.Plugins.Option
+  # alias ElixirSense.Plugins.Option
    def main(args \\ []) do
     args
     |> parse_args()
