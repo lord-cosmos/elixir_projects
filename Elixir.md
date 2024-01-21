@@ -200,6 +200,19 @@ In process.ex,
 
 Advanced Elixir :
 
+Process monitoring is out of the scope for thw book. However, it is worth knowing that you can monitor a process and receive notifications from it using a reference value—for example, when and how a process exits.
+
+`Task.start/1` has 1 limitation by design: it does not return the result of the function that was executed.
+
+To retrieve the result of a function, you have to use Task.async/1. It returns a %Task{} struct which you can assign to a variable for later use.
+
+Let’s have a closer look at what this variable contains:
+
+• owner is the PID of the process that started the Task process; • pid is the identifier of the Task process itself;
+• ref is the process monitor reference.
+
+To retrieve the result of the task, you can use either `Task.await/1` or `Task.yield/1` which accept a Task struct as an argument. There is an important difference in the way `await/1 ` and `yield/1` work, so you have to choose wisely. They both stop the program and try to retrieve the result of the task. The difference comes from the way they handle process timeouts.
+
 Started
 
 Concurrent Processing In Elixir Textbook
