@@ -213,6 +213,21 @@ Let’s have a closer look at what this variable contains:
 
 To retrieve the result of the task, you can use either `Task.await/1` or `Task.yield/1` which accept a Task struct as an argument. There is an important difference in the way `await/1 ` and `yield/1` work, so you have to choose wisely. They both stop the program and try to retrieve the result of the task. The difference comes from the way they handle process timeouts.
 
+```Elixir
+Tasks
+|> Enum.map(&Task.await/1)
+```
+
+is equivalent to writing :
+
+```Elixir
+Tasks
+|> Enum.map(fn task ->
+  Task.await(task)
+  end
+)
+```
+
 Started
 
 Concurrent Processing In Elixir Textbook
@@ -220,3 +235,4 @@ Concurrent Processing In Elixir Textbook
 Chapter 1 : Easy concurrency with the task module
 Progress(pages & concept) : Dates
 1-7 (Task.start) Jan 19,2024
+7-11 (Task.async/1 Task.await/1 Task.yield/1) Jan 21, 2024
