@@ -1,16 +1,18 @@
 defmodule Sender do
   def send_email(email) do
-    Process.sleep(30_000)
+    Process.sleep(3000)
     IO.puts "Email to #{email} sent"
     {:ok, "email_sent"}
   end
 
 
   def notify_all(emails) do
-    Enum.each(emails, fn email ->
-      Task.start(fn -> send_email(email)
+   emails
+   |> Enum.map(fn email ->
+        Task.async(fn -> send_email(email)
       end)
-    end)
+   end)
+   |> Enum.map(&Task.await/1)
   end
 
 end
@@ -28,3 +30,10 @@ end
 # In comparison, Task.yield/1 simply returns nil if the task hasn't completed.
 # The timeout this method is 5000ms but does not cause an exception and crash.
 # A completed task will return either {:ok, result} or {:exit, reason}.
+
+# the :infinity option is not allowed for yield though.
+
+# It is a good idea to stop the task manually by calling Task.shutdown(task).
+# The shutdown/1 function also accepts a timeout and gives the process a last chance to com- plete, before stopping it.
+# If it completes, you will receive the result as normal.
+# You can also stop a process immediately (and rather violently) by using the atom :brutal_kill as a second argument.
