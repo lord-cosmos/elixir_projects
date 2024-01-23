@@ -236,3 +236,4 @@ Chapter 1 : Easy concurrency with the task module
 Progress(pages & concept) : Dates
 1-7 (Task.start) Jan 19,2024
 7-11 (Task.async/1 Task.await/1 Task.yield/1) Jan 21, 2024
+11-17 Task.async_stream/1, linking processes Jan 22, 2024
