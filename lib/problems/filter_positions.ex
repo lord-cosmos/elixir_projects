@@ -1,3 +1,6 @@
+
+# Link :  https://www.hackerrank.com/challenges/fp-filter-positions-in-a-list/
+
 defmodule Problems.FilterPositions do
   def takeInteger() do
       IO.get("") |> String.trim() |> String.to_integer()

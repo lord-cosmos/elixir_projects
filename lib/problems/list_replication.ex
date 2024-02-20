@@ -1,3 +1,6 @@
+
+#  Link : https://www.hackerrank.com/challenges/fp-list-replication/
+
 defmodule Problems.ListReplication do
   def elements([head|tail]) do
       Enum.each(tail, fn x ->
