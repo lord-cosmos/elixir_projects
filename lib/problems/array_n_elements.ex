@@ -6,7 +6,7 @@ defmodule Problems.ArrayNElements do
   end
 
   def takeInput() do
-      n = takeInteger()
+      {:ok, n} = takeInteger()
       printList(n)
   end
 
