@@ -38,9 +38,9 @@ defmodule Problems.LimitExpression do
   end
 end
 
-aSeq = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
-bSeq = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
-[left, right] = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
+# aSeq = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
+# bSeq = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
+# [left, right] = IO.read(:stdio, :line) |> Problems.LimitExpression.convert
 
-IO.puts Problems.LimitExpression.area(aSeq, bSeq, left, right)
-IO.puts Problems.LimitExpression.volume(aSeq, bSeq, left, right)
+# IO.puts Problems.LimitExpression.area(aSeq, bSeq, left, right)
+# IO.puts Problems.LimitExpression.volume(aSeq, bSeq, left, right)

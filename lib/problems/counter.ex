@@ -26,4 +26,4 @@ defmodule Main do
   end
 end
 
-Main.run()
+# Main.run()

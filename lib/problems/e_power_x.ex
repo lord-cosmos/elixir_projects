@@ -20,4 +20,4 @@ defmodule Problems.EPowerX do
   end
 end
 
-Problems.EPowerX.takeInput()
+# Problems.EPowerX.takeInput()

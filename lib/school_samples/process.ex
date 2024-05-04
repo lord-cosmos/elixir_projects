@@ -14,5 +14,4 @@ defmodule Example2 do
 end
 
 
-spawn Example2, :add, [2,3]
-  
+# spawn Example2, :add, [2,3]
