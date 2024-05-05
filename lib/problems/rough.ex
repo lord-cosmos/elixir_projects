@@ -51,3 +51,33 @@ defmodule Canvas do
     IO.puts "Style: #{inspect Keyword.get_values(options, :style)}"
   end
 end
+
+#  some pattern matching on maps.
+people = [
+  %{ name: "Grumpy", height: 1.24},
+  %{ name: "Dave", height: 1.88},
+  %{ name: "Dopey", height: 1.32},
+  %{ name: "Shaquille", height: 2.16 },
+  %{ name: "Sneezy", height: 1.28 }
+  ]
+# comprehension with filter.
+IO.inspect(for person = %{ height: height } <- people, height > 1.5, do: person)
+
+
+# Pattern matching can’t bind keys
+# %{ item => :ok } = %{ 1 => :ok, 2 => :error }
+# gives error
+
+
+defmodule Attendee do
+  defstruct name: "", paid: false, over_18: true
+  def may_attend_after_party(attendee= %Attendee{}) do
+    attendee.paid && attendee.over_18
+  end
+
+  def print_vip_badge(%Attendee{name: name}) when name != "" do
+    IO.puts "Very cheap badge for #{name}"
+  end
+
+  def print_vip_badge(%Attendee{}), do: raise "missing name for the badge."
+end
