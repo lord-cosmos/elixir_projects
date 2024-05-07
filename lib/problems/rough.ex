@@ -129,3 +129,12 @@ fn (val) -> {val, String.upcase(val)} end)
 # %{actor: %{first: "Cary", last: "ELWES"}, character: "Westley",
 #   role: "farm boy"}]}
 #   role: "farm boy"}]}
+
+# Because streams are lazy, there’s no need for the whole collection to be available upfront. For example, suppose we write the following:
+
+# iex> Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5) [2, 3, 4, 5, 6]
+# It takes about eight seconds before we see the result. Elixir is creating a 10-million-element list, then taking the first five elements from it. Suppose that instead, we write the following:
+
+# iex> Stream.map(1..10_000_000, &(&1+1))
+# |> Enum.take(5) [2, 3, 4, 5, 6]
+# The result comes back instantaneously. The take call just needs five values, which it gets from the stream. Once it has them, there’s no more processing
