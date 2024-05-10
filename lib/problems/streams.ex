@@ -48,6 +48,20 @@ defmodule Streams do
 end
 
 
+defmodule Utf8 do
+  def each(str, func) when is_binary(str) do
+    _each(str, func)
+  end
+
+  defp _each(<<head::utf8, tail::binary>> , func) do
+    func.(head)
+    _each(tail, func)
+  end
+  defp _each(<<>>, _func), do: []
+end
+
+
+
 defmodule Countdown do
   def sleep(seconds) do
     receive do
